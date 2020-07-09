@@ -23,8 +23,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    binding.pry
-    if self.is_logged_in?
+    @user = User.find_by(username: params[:username)
+    if is_logged_in?
       erb :account
     else
       erb :error
